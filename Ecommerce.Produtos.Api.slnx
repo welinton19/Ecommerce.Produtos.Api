@@ -1,0 +1,21 @@
+<Solution>
+  <Folder Name="/Gateway/">
+    <Project Path="Ecommerce.Gateway/Ecommerce.Gateway.csproj" Id="d9abc500-8cbf-4a9f-beeb-c8ea74f62f5b" />
+  </Folder>
+  <Folder Name="/Nota-Fiscal/">
+    <Project Path="Ecommerce.NotaFiscal.Api/Ecommerce.NotaFiscal.Api.csproj" Id="8c4cbeb4-ea83-457c-b4ac-89ca7625bb48" />
+  </Folder>
+  <Folder Name="/Pagamentos/">
+    <Project Path="Ecommerce.Pagamentos.Api/Ecommerce.Pagamentos.Api.csproj" Id="4d86e361-0c84-47d9-9a94-37a576d1164a" />
+  </Folder>
+  <Folder Name="/Produtos/">
+    <Project Path="Ecommerce.Produtos.Api/Ecommerce.Produtos.Api.csproj" />
+  </Folder>
+  <Folder Name="/Produtos/Nucleo/">
+    <Project Path="Ecommerce.Produtos.Application/Ecommerce.Produtos.Application.csproj" Id="823e359d-0eb4-46fe-9700-5527019a14b3" />
+    <Project Path="Ecommerce.Produtos.Domain/Ecommerce.Produtos.Domain.csproj" Id="223bd17f-c86c-4161-aeca-249d3c92b8ab" />
+    <Project Path="Ecommerce.Produtos.Infrastructure/Ecommerce.Produtos.Infrastructure.csproj" Id="2636caec-0644-4124-b42f-ff2775e465a4" />
+  </Folder>
+  <Project Path="Ecommerce.Produtos.Api.AppHost/Ecommerce.Produtos.Api.AppHost.csproj" Id="ea3c5436-977d-45d2-a0d4-b66f0047763d" />
+  <Project Path="Ecommerce.Produtos.Api.ServiceDefaults/Ecommerce.Produtos.Api.ServiceDefaults.csproj" />
+</Solution>
