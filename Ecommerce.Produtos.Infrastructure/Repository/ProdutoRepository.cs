@@ -14,7 +14,7 @@ public class ProdutoRepository : IProdutosRepository
         _context = context;
     }
 
-    public async Task<Produto> CreateAsync(Produto produto)
+    public async Task<Produto> CreateProdutoAsync(Produto produto)
     {
         await _context.Produtos.AddAsync(produto);
         await _context.SaveChangesAsync();
@@ -48,7 +48,7 @@ public class ProdutoRepository : IProdutosRepository
         return await _context.Produtos.FindAsync(id);
     }
 
-    public async Task<Produto> UpdateAsync(Produto produto)
+    public async Task<Produto> UpdateProdutoAsync(Produto produto)
     {
         _context.Produtos.Update(produto);
         await _context.SaveChangesAsync();

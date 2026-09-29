@@ -14,14 +14,14 @@ public class CategoriaRepository : ICategoriasRepository
         _context = context;
     }
 
-    public async Task<Categoria> CreateAsync(Categoria categoria)
+    public async Task<Categoria> CreateCategoriaAsync(Categoria categoria)
     {
         await _context.Categorias.AddAsync(categoria);
         await _context.SaveChangesAsync();
         return categoria;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteCategoriaAsync (int id)
     {
         await _context.Categorias.FindAsync(id);
         var categoria = await _context.Categorias.FindAsync(id);
@@ -35,7 +35,7 @@ public class CategoriaRepository : ICategoriasRepository
         return true;
     }
 
-    public async Task<IEnumerable<Categoria>> GetAllAsync()
+    public async Task<IEnumerable<Categoria>> GetAllCategoriasAsync()
     {
         return await _context.Categorias.ToListAsync();
     }
@@ -45,13 +45,13 @@ public class CategoriaRepository : ICategoriasRepository
         return await _context.Categorias.Where(c => c.CategoriaPaiId == categoriaPaiId).ToListAsync();
     }
 
-    public async Task<Categoria> GetByIdAsync(int id)
+    public async Task<Categoria> GetCategoriaByIdAsync(int id)
     {
         return await _context.Categorias.FindAsync(id);
     }
     
 
-    public async Task<Categoria> UpdateAsync(Categoria categoria)
+    public async Task<Categoria> UpdateCategoriaAsync(Categoria categoria)
     {
         _context.Categorias.Update(categoria);
         await _context.SaveChangesAsync();

@@ -4,10 +4,10 @@ namespace Ecommerce.Produtos.Domain.IRepository;
 
 public interface ICategoriasRepository
 {
-    Task<Categoria> GetByIdAsync(int id);
-    Task<IEnumerable<Categoria>> GetAllAsync();
+    Task<Categoria> GetCategoriaByIdAsync(int id);
+    Task<IEnumerable<Categoria>> GetAllCategoriasAsync();
     Task<IEnumerable<Categoria>> GetByCategoriaPaiIdAsync(int categoriaPaiId);
-    Task<Categoria> CreateAsync(Categoria categoria);
-    Task<Categoria> UpdateAsync(Categoria categoria);
-    Task<bool> DeleteAsync(int id);
+    Task<Categoria> CreateCategoriaAsync(Categoria categoria);
+    Task<Categoria> UpdateCategoriaAsync(Categoria categoria);
+    Task<bool> DeleteCategoriaAsync (int id);
 }
