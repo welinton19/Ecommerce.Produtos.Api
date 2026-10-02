@@ -26,7 +26,7 @@ public class CreateProdutoUseCase
             CategoriaId = request.CategoriaId,
             Categoria = request.Categoria
         };
-        var createdProduto = await _produtosRepository.CreateAsync(produto);
+        var createdProduto = await _produtosRepository.CreateProdutoAsync(produto);
         return new CreateProdutoResponse
         {
             Id = createdProduto.Id,

@@ -26,7 +26,7 @@ public class UpdateProdutoUseCase
         produto.Descricao = request.Descricao;
         produto.Imagem = request.Imagem;
         produto.CategoriaId = request.CategoriaId;
-        var updatedProduto = await _produtosRepository.UpdateAsync(produto);
+        var updatedProduto = await _produtosRepository.UpdateProdutoAsync(produto);
         return new UpdateProdutoResponse
         {
             Id = updatedProduto.Id,

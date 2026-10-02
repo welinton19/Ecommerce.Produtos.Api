@@ -16,10 +16,13 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Scalar.AspNetCore" Version="2.17.13" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Ecommerce.Produtos.Api.ServiceDefaults\Ecommerce.Produtos.Api.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\Ecommerce.Produtos.Application\Ecommerce.Produtos.Application.csproj" />
+    <ProjectReference Include="..\Ecommerce.Produtos.Infrastructure\Ecommerce.Produtos.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

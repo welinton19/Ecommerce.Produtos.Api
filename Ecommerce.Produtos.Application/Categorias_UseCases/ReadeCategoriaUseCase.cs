@@ -14,7 +14,7 @@ public class ReadCategoriaUseCase
 
     public async Task<ReadCategoriaResponse> ExecuteAsync(ReadCategoriaRequest request)
     {
-        var categoria = await _categoriaRepository.GetByIdAsync(request.CategoriaId);
+        var categoria = await _categoriaRepository.GetCategoriaByIdAsync(request.CategoriaId);
         if (categoria == null)
         {
             throw new Exception("Categoria não encontrada.");

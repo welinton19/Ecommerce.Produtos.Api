@@ -1,5 +1,6 @@
 ﻿using Ecommerce.Produtos.Application.DTOs.Create;
 using Ecommerce.Produtos.Application.DTOs.Read;
+using Ecommerce.Produtos.Application.DTOs.Update;
 using Ecommerce.Produtos.Application.Interfaces;
 using Ecommerce.Produtos.Domain.Entities;
 using Ecommerce.Produtos.Domain.IRepository;
@@ -63,7 +64,7 @@ public class ProdutoService : IProdutoService
             }));
     }
 
-    public async Task<ReadProdutoResponse> UpdateProdutoAsync(int produtoId, CreateProdutoRequest request)
+    public async Task<ReadProdutoResponse> UpdateProdutoAsync(int produtoId, UpdateProdutoRequest request)
     {
         var produto = await _produtoRepository.GetByIdAsync(produtoId);
         if (produto == null)
@@ -85,5 +86,25 @@ public class ProdutoService : IProdutoService
             CategoriaId = produto.CategoriaId
         };  
 
+    }
+
+    public async Task<ReadProdutoResponse> ReadProdutoAsync(int produtoId)
+    {
+        var produto = await _produtoRepository.GetByIdAsync(produtoId);
+        if (produto == null)
+        {
+            throw new Exception($"Produto with ID {produtoId} not found.");
+        }
+        return new ReadProdutoResponse
+        {
+            Id = produto.Id,
+            Name = produto.Name,
+            Preco = produto.Preco,
+            EstoqueQuantidade = produto.EstoqueQuantidade,
+            Quantidade = produto.Quantidade,
+            Descricao = produto.Descricao,
+            Imagem = produto.Imagem,
+            CategoriaId = produto.CategoriaId
+        };
     }
 }

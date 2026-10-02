@@ -1,5 +1,6 @@
 ﻿using Ecommerce.Produtos.Application.Categorias_DTOs.Create;
 using Ecommerce.Produtos.Application.Categorias_DTOs.Reade;
+using Ecommerce.Produtos.Application.Categorias_DTOs.Update;
 using Ecommerce.Produtos.Application.Interfaces;
 using Ecommerce.Produtos.Domain.Entities;
 using Ecommerce.Produtos.Domain.IRepository;
@@ -56,9 +57,14 @@ public class CategoriaService : ICategoriaService
 
     }
 
-    public async Task<ReadCategoriaResponse> ReadCategoriaAsync(ReadCategoriaRequest request)
+    public async Task<ReadCategoriaResponse> ReadCategoriaIdAsync(int categoriaId)
     {
-        var categoria = await _categoriaRepository.GetCategoriaByIdAsync(request.CategoriaId);
+        var categoria = await _categoriaRepository.GetCategoriaByIdAsync(categoriaId);
+        if (categoria == null)
+        {
+            throw new InvalidOperationException("Categoria not found");
+        }
+
         return new ReadCategoriaResponse
         {
             CategoriaId = categoria.CategoriaId,
@@ -69,7 +75,7 @@ public class CategoriaService : ICategoriaService
         };
     }
 
-    public async Task<ReadCategoriaResponse> UpdateCategoriaAsync(int categoriaId, CreateCategoriaRequest request)
+    public async Task<ReadCategoriaResponse> UpdateCategoriaAsync(int categoriaId, UpdateCategoriaRequest request)
     {
         var categoria = await _categoriaRepository.GetCategoriaByIdAsync(categoriaId);
         if (categoria == null)
@@ -78,9 +84,7 @@ public class CategoriaService : ICategoriaService
         }
 
         categoria.Name = request.Name;
-        categoria.Slug = request.Slug;
-        categoria.CategoriaPaiId = request.CategoriaPaiId;
-        categoria.Ativo = request.Ativo;
+        
 
         var updatedCategoria = await _categoriaRepository.UpdateCategoriaAsync(categoria);
         return new ReadCategoriaResponse

@@ -13,11 +13,11 @@ public class DeleteCategoriaUseCase
 
     public async Task ExecuteAsync(int categoriaId)
     {
-        var categoria = await _categoriaRepository.GetByIdAsync(categoriaId);
+        var categoria = await _categoriaRepository.GetCategoriaByIdAsync(categoriaId);
         if (categoria == null)
         {
             throw new Exception("Categoria não encontrada.");
         }
-        await _categoriaRepository.DeleteAsync(categoriaId);
+        await _categoriaRepository.DeleteCategoriaAsync(categoriaId);
     }
 }

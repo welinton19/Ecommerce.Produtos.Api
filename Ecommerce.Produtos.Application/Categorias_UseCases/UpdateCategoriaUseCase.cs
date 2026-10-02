@@ -14,7 +14,7 @@ public class UpdateCategoriaUseCase
 
     public async Task ExecuteAsync(UpdateCategoriaRequest request)
     {
-        var categoria = await _categoriaRepository.GetByIdAsync(request.CategoriaId);
+        var categoria = await _categoriaRepository.GetCategoriaByIdAsync(request.CategoriaId);
         if (categoria == null)
         {
             throw new Exception("Categoria não encontrada.");
@@ -23,6 +23,6 @@ public class UpdateCategoriaUseCase
         //categoria.Slug = request.Slug;
         //categoria.CategoriaPaiId = request.CategoriaPaiId;
         //categoria.Ativo = request.Ativo;
-        await _categoriaRepository.UpdateAsync(categoria);
+        await _categoriaRepository.UpdateCategoriaAsync(categoria);
     }
 }

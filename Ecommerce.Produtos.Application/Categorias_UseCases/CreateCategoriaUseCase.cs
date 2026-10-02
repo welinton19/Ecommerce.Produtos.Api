@@ -23,7 +23,7 @@ public class CreateCategoriaUseCase
             Ativo = request.Ativo
         };
 
-        await _categoriaRepository.CreateAsync(categoria);
+        await _categoriaRepository.CreateCategoriaAsync(categoria);
 
         return new CreateCategoriaResponse
         {
