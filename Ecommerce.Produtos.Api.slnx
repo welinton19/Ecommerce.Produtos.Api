@@ -8,6 +8,11 @@
   <Folder Name="/Pagamentos/">
     <Project Path="Ecommerce.Pagamentos.Api/Ecommerce.Pagamentos.Api.csproj" Id="4d86e361-0c84-47d9-9a94-37a576d1164a" />
   </Folder>
+  <Folder Name="/Pagamentos/Nucleo/">
+    <Project Path="Pagamanetos.Application/Pagamanetos.Application.csproj" Id="a9526ccf-2fb3-49d4-8cf6-90ec56e51424" />
+    <Project Path="Pagamentos.Domain/Pagamentos.Domain.csproj" Id="09b17fe4-e741-4f48-ac0e-79939b65f99b" />
+    <Project Path="Pagamentos.Infrastructure/Pagamentos.Infrastructure.csproj" Id="a3031a28-aea1-4e26-ad85-afce2d099cf7" />
+  </Folder>
   <Folder Name="/Produtos/">
     <Project Path="Ecommerce.Produtos.Api/Ecommerce.Produtos.Api.csproj" />
   </Folder>
