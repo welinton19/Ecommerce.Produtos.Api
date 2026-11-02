@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Pagamentos.Domain.Entities;
 
-namespace Pagamentos.Domain.IRepository
+namespace Pagamentos.Domain.IRepository;
+
+public interface IPagamentoBoletoRepository
 {
-    internal interface IPagamentoBoletoRepository
-    {
-    }
+    Task<PagamentoBoleto> ObterPorIdAsync(Guid id);
+    Task<IEnumerable<PagamentoBoleto>> ObterTodosAsync();
+    Task AdicionarAsync(PagamentoBoleto pagamentoBoleto);
+    Task AtualizarAsync(PagamentoBoleto pagamentoBoleto);
+    Task ExcluirAsync(PagamentoBoleto pagamentoBoleto);
 }

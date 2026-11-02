@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Pagamentos.Domain.Entities;
 
-namespace Pagamentos.Domain.IRepository
+namespace Pagamentos.Domain.IRepository;
+
+public interface IPagamentoCartaoRepository
 {
-    internal interface IPagamentoCartaoRepository
-    {
-    }
+    Task<PagamentoCartao> ObterPorIdAsync(Guid id);
+    Task<IEnumerable<PagamentoCartao>> ObterTodosAsync();
+    Task AdicionarAsync(PagamentoCartao pagamentoCartao);
+    Task AtualizarAsync(PagamentoCartao pagamentoCartao);
+    Task ExcluirAsync(PagamentoCartao pagamentoCartao);
 }

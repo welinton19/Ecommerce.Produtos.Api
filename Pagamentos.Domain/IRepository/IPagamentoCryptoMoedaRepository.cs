@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Pagamentos.Domain.Entities;
 
-namespace Pagamentos.Domain.IRepository
+namespace Pagamentos.Domain.IRepository;
+
+public interface IPagamentoCryptoMoedaRepository
 {
-    internal interface IPagamentoCryptoMoedaRepository
-    {
-    }
+    Task<PagamentoCryptoMoeda> ObterPorIdAsync(Guid id);
+    Task<IEnumerable<PagamentoCryptoMoeda>> ObterTodosAsync();
+    Task AdicionarAsync(PagamentoCryptoMoeda pagamentoCryptoMoeda);
+    Task AtualizarAsync(PagamentoCryptoMoeda pagamentoCryptoMoeda);
+    Task ExcluirAsync(PagamentoCryptoMoeda pagamentoCryptoMoeda);
 }
